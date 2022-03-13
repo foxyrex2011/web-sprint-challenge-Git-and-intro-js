@@ -230,11 +230,11 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(artist, number) {
-  return `the artist at index ${artist[number].id} is ${artist[number].name}`;
+function getArtistByIndex(artists, number) {
+  return `the artist at index ${artists[number].id} is ${artists[number].name}`;
 }
 
-
+console.log(getArtistByIndex(artists, 0))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use copy to do the following: 
@@ -245,8 +245,12 @@ Use copy to do the following:
 */
 
 function listOfNames(artists) {
+  let newArray = [...artists]
+    for (let i = 0; i < newArray.length; i++) {
+      newArray[i] = newArray[i].name
+    }
+    return newArray
 }
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -259,10 +263,10 @@ Use removeArtist to do the following:
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
 function removeArtist(artists, number) {
-  /*Your Code Here*/
+  
 }
 
-
+console.log()
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -314,7 +318,7 @@ function artistInfo(artists, name){
   
 }
 
-console.log(artistInfo(artists, 'Frida Kahlo'))
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
@@ -326,14 +330,8 @@ Use artistByCountry to do the following:
 */
 
 function artistByCountry(artists, nationality){
-  let newArray = [];
-    for (let i = 0; i < artists.length; i++) {
-      if (artists[i].nationality == nationality) {
-        return newArray.push([artists.nationality]);
-      }
-    }
+
 }
-console.log(artistByCountry(artists, 'Spanish'))
 
 
 /* ***** END OF TASKS ***** */
