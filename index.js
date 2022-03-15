@@ -234,7 +234,7 @@ function getArtistByIndex(artists, number) {
   return `the artist at index ${artists[number].id} is ${artists[number].name}`;
 }
 
-console.log(getArtistByIndex(artists, 0))
+// console.log(getArtistByIndex(artists, 0))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use copy to do the following: 
@@ -252,7 +252,7 @@ function listOfNames(artists) {
     return newArray;
 }
 
-console.log(listOfNames(artists));
+// console.log(listOfNames(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -265,11 +265,11 @@ Use removeArtist to do the following:
 
 function removeArtist(artists, number) {
   let newArray = [...artists];
-    newArray.splice(newArray, number)
-    return newArray;
+  newArray.splice(number, 1);
+  return newArray;
   }
 
-console.log()
+// console.log(removeArtist(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -292,7 +292,7 @@ function addArtist(artists, name, years, genre, nationality, bio) {
   return artists;
 }
 
-console.log(addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.'))
+// console.log(addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.'))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -303,10 +303,10 @@ Use lotsOfArt to do the following:
 */
 
 function lotsOfArt(artists) {
-  /*Your Code Here*/
+  return listOfNames(artists.filter(artist => artist.paintings > 100));
 }
 
-
+// console.log(lotsOfArt(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistInfo to do the following: 
@@ -319,10 +319,14 @@ Use artistInfo to do the following:
 */
 
 function artistInfo(artists, name){
-  
+  for (let i = 0; i < artists.length; i++) {
+    if (artists[i].name === name) {
+      return artists[i].bio;
+    }
+  }
 }
 
-
+// console.log(artistInfo(artists, 'Frida Kahlo'))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
@@ -334,10 +338,10 @@ Use artistByCountry to do the following:
 */
 
 function artistByCountry(artists, nationality){
-
+  return listOfNames(artists.filter(artist => artist.nationality === nationality));
 }
 
-
+// console.log(artistByCountry(artists, 'Spanish'));
 /* ***** END OF TASKS ***** */
 
 
